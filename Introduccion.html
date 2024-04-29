@@ -61,7 +61,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Preprocesamiento de datos" href="Preprocesamiento_Datos.html" />
+    <link rel="next" title="Preprocesamiento de datos" href="Preprocesamiento.html" />
     <link rel="prev" title="Violencia Doméstica en Colombia" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -179,18 +179,9 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introducción</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="Preprocesamiento_Datos.html">Preprocesamiento de datos</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="Preprocesamiento.html">Preprocesamiento de datos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Analisis_Exploratorio.html">Análisis Exploratorio de Datos (EDA)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Modelo_Clasificacion.html">Modelos de Clasificación</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="Modelo_Regresion.html">Modelos de Regresión</a></li>
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Conclusion.html">Conclusión General</a></li>
 </ul>
 
@@ -387,18 +378,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introducción</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metolodia-a-implementar">Metolodía a implementar</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento-de-datos">Preprocesamiento de Datos:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-exploratorio">Análisis Exploratorio:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identificacion-de-factores-clave">Identificación de Factores Clave:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desarrollo-de-modelos-de-clasificacion">Desarrollo de Modelos de Clasificación:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pronostico-de-casos-futuros">Pronóstico de Casos Futuros:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion-de-herramientas-de-visualizacion">Implementación de Herramientas de Visualización:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodologia-a-implementar">Metodología a implementar</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento-de-datos">Preprocesamiento de Datos:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-exploratorio">Análisis Exploratorio:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identificacion-de-factores-clave">Identificación de Factores Clave:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#desarrollo-de-modelos-de-clasificacion">Desarrollo de Modelos de Clasificación:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pronostico-de-casos-futuros">Pronóstico de Casos Futuros:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion-de-herramientas-de-visualizacion">Implementación de Herramientas de Visualización:</a></li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -409,52 +398,52 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="introduccion">
+  <section class="tex2jax_ignore mathjax_ignore" id="introduccion">
 <h1>Introducción<a class="headerlink" href="#introduccion" title="Link to this heading">#</a></h1>
 <p>En Colombia, la violencia doméstica es un tema que atraviesa las fibras más sensibles de nuestra sociedad. Diariamente la población se enfrenta con el flagelo silencioso del abuso en sus propios hogares. Este fenómeno, arraigado en nuestras dinámicas culturales, históricas y estructurales, se manifiesta de múltiples formas, desde el abuso físico y emocional hasta el control y coerción económica y sexual. A pesar de los avances en las leyes y las campañas de sensibilización y prevención, las cifras indican que la violencia doméstica sigue siendo una realidad inquietante que demanda atención urgente y la construcción de políticas públicas pertinentes para su descenso.</p>
 <p>El Objetivo de este proyecto es analizar el conjunto de datos de violencia doméstica en Colombia, proporcionado por la DIJIN y la Policía Nacional de Colombia para el periodo 2010-2023, con el fin de identificar los principales factores que inciden en el nivel de riesgo asociado a cada caso y pronosticar la cantidad de incidentes futuros en función de estos factores.</p></p>
-</section>
-<section id="metolodia-a-implementar">
-<h1>Metolodía a implementar<a class="headerlink" href="#metolodia-a-implementar" title="Link to this heading">#</a></h1>
+<section id="metodologia-a-implementar">
+<h2>Metodología a implementar<a class="headerlink" href="#metodologia-a-implementar" title="Link to this heading">#</a></h2>
 <section id="preprocesamiento-de-datos">
-<h2>Preprocesamiento de Datos:<a class="headerlink" href="#preprocesamiento-de-datos" title="Link to this heading">#</a></h2>
+<h3>Preprocesamiento de Datos:<a class="headerlink" href="#preprocesamiento-de-datos" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Limpiar y preparar los datos para el análisis, asegurando que las entradas sean consistentes y estén completas para una evaluación precisa</p></li>
 <li><p>Identificar y tratar valores faltantes, outliers y posibles errores de codificación en el conjunto de datos.</p></li>
 </ul>
 </section>
 <section id="analisis-exploratorio">
-<h2>Análisis Exploratorio:<a class="headerlink" href="#analisis-exploratorio" title="Link to this heading">#</a></h2>
+<h3>Análisis Exploratorio:<a class="headerlink" href="#analisis-exploratorio" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Realizar un análisis estadístico descriptivo para entender la distribución y las características generales de los datos.</p></li>
 <li><p>Explorar las tendencias temporales de los casos de violencia doméstica reportados entre 2010 y 2023.</p></li>
 </ul>
 </section>
 <section id="identificacion-de-factores-clave">
-<h2>Identificación de Factores Clave:<a class="headerlink" href="#identificacion-de-factores-clave" title="Link to this heading">#</a></h2>
+<h3>Identificación de Factores Clave:<a class="headerlink" href="#identificacion-de-factores-clave" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Utilizar técnicas de análisis estadístico y modelado predictivo para identificar los factores que más influyen en el nivel de riesgo de violencia doméstica, como la ubicación, el tipo de arma utilizada y la edad de los involucrados.</p></li>
 </ul>
 </section>
 <section id="desarrollo-de-modelos-de-clasificacion">
-<h2>Desarrollo de Modelos de Clasificación:<a class="headerlink" href="#desarrollo-de-modelos-de-clasificacion" title="Link to this heading">#</a></h2>
+<h3>Desarrollo de Modelos de Clasificación:<a class="headerlink" href="#desarrollo-de-modelos-de-clasificacion" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Construir y validar modelos de clasificación para determinar el nivel de riesgo de los incidentes de violencia doméstica.</p></li>
 <li><p>Comparar diferentes algoritmos de clasificación para seleccionar el más adecuado en base a su precisión y eficacia.</p></li>
 </ul>
 </section>
 <section id="pronostico-de-casos-futuros">
-<h2>Pronóstico de Casos Futuros:<a class="headerlink" href="#pronostico-de-casos-futuros" title="Link to this heading">#</a></h2>
+<h3>Pronóstico de Casos Futuros:<a class="headerlink" href="#pronostico-de-casos-futuros" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Desarrollar un modelo predictivo que permita estimar la cantidad de casos de violencia doméstica que podrían ocurrir en el futuro, basado en los factores clave identificados.</p></li>
 <li><p>Validar el modelo predictivo utilizando un conjunto de datos de prueba para asegurar su fiabilidad y precisión.</p></li>
 </ul>
 </section>
 <section id="implementacion-de-herramientas-de-visualizacion">
-<h2>Implementación de Herramientas de Visualización:<a class="headerlink" href="#implementacion-de-herramientas-de-visualizacion" title="Link to this heading">#</a></h2>
+<h3>Implementación de Herramientas de Visualización:<a class="headerlink" href="#implementacion-de-herramientas-de-visualizacion" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Crear dashboards interactivos que permitan visualizar los datos y los resultados del análisis, facilitando la interpretación y la toma de decisiones por parte de las autoridades y organizaciones interesadas.</p></li>
 </ul>
+</section>
 </section>
 </section>
 
@@ -498,7 +487,7 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="Preprocesamiento_Datos.html"
+       href="Preprocesamiento.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
@@ -522,18 +511,16 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introducción</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metolodia-a-implementar">Metolodía a implementar</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento-de-datos">Preprocesamiento de Datos:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-exploratorio">Análisis Exploratorio:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identificacion-de-factores-clave">Identificación de Factores Clave:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desarrollo-de-modelos-de-clasificacion">Desarrollo de Modelos de Clasificación:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pronostico-de-casos-futuros">Pronóstico de Casos Futuros:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion-de-herramientas-de-visualizacion">Implementación de Herramientas de Visualización:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodologia-a-implementar">Metodología a implementar</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento-de-datos">Preprocesamiento de Datos:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-exploratorio">Análisis Exploratorio:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identificacion-de-factores-clave">Identificación de Factores Clave:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#desarrollo-de-modelos-de-clasificacion">Desarrollo de Modelos de Clasificación:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pronostico-de-casos-futuros">Pronóstico de Casos Futuros:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion-de-herramientas-de-visualizacion">Implementación de Herramientas de Visualización:</a></li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>

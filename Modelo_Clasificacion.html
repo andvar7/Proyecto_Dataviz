@@ -61,7 +61,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Modelos de Regresión" href="Modelo_Regresion.html" />
+    <link rel="next" title="Conclusión General" href="Conclusion.html" />
     <link rel="prev" title="Análisis Exploratorio de Datos (EDA)" href="Analisis_Exploratorio.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -179,18 +179,9 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Introduccion.html">Introducción</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="Preprocesamiento_Datos.html">Preprocesamiento de datos</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="Preprocesamiento.html">Preprocesamiento de datos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Analisis_Exploratorio.html">Análisis Exploratorio de Datos (EDA)</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Modelos de Clasificación</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="Modelo_Regresion.html">Modelos de Regresión</a></li>
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Conclusion.html">Conclusión General</a></li>
 </ul>
 
@@ -387,28 +378,27 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Modelos de Clasificación</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering-k-means">Clustering - K-Means</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento-de-datos">Preprocesamiento de Datos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-del-silhouette-score">Cálculo del Silhouette Score</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-los-centros-de-clusters">Análisis de los Centros de Clusters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering-k-means">Clustering - K-Means</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicando-pca-para-reducir-la-dimensionalidad-a-tres-componentes-principales">Aplicando PCA para reducir la dimensionalidad a tres componentes principales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-del-silhouette-score">Cálculo del Silhouette Score</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-los-centros-de-clusters">Análisis de los Centros de Clusters</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Modelos de Clasificación</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-pipelines-y-gridsearchcv">Creación de Pipelines y GridSearchCV</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-gridseachcv">Best GridSeachCV</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluacion-de-modelos">Evaluación de Modelos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resultados-de-los-modelos">Resultados de los Modelos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guardar-modelos">Guardar Modelos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#asignar-etiquetas">Asignar Etiquetas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-y-revision">Análisis y Revisión</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-los-modelos-cargados">Uso de los modelos cargados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Modelos de Clasificación</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#desbalanceo">Desbalanceo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-pipelines-y-gridsearchcv">Creación de Pipelines y GridSearchCV</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluacion-de-modelos">Evaluación de Modelos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas">Métricas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curvas-roc">Curvas ROC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices-de-confusion">Matrices de confusión</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance-para-xgboost">Feature Importance para XGBoost</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resultados-de-los-modelos">Resultados de los Modelos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guardar-modelos">Guardar Modelos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#asignar-etiquetas">Asignar Etiquetas</a></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -419,12 +409,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="modelos-de-clasificacion">
+  <section class="tex2jax_ignore mathjax_ignore" id="modelos-de-clasificacion">
 <h1>Modelos de Clasificación<a class="headerlink" href="#modelos-de-clasificacion" title="Link to this heading">#</a></h1>
-</section>
-<section id="clustering-k-means">
-<h1>Clustering - K-Means<a class="headerlink" href="#clustering-k-means" title="Link to this heading">#</a></h1>
-<p>El objetivo principal del algoritmo K-Means es agrupar datos similares en clusters o grupos. Los clusters son conjuntos de puntos de datos que son similares entre sí en términos de características. Es importante destacar que K-Means no asigna etiquetas a los puntos de datos. Simplemente agrupa los datos en clusters basados en similitud. En este caso, se realiza una asignación dependiendo el número de cluster.</p>
+<p>El objetivo es poder clasificar el tipo de riesgo reportado con el fin de poder tomar medidas  preventivas, de mejora, correctivas.</p>
 <section id="preprocesamiento-de-datos">
 <h2>Preprocesamiento de Datos<a class="headerlink" href="#preprocesamiento-de-datos" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -435,95 +422,10 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>departamento</th>
-      <th>municipio</th>
-      <th>armas_medios</th>
-      <th>fecha_hecho</th>
-      <th>genero</th>
-      <th>grupo_etario</th>
-      <th>cantidad</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>ATLANTICO</td>
-      <td>BARRANQUILLA (CT)</td>
-      <td>ARMA BLANCA</td>
-      <td>2010-01-01</td>
-      <td>MASCULINO</td>
-      <td>ADULTOS</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>BOYACA</td>
-      <td>DUITAMA</td>
-      <td>ARMA BLANCA</td>
-      <td>2010-01-01</td>
-      <td>FEMENINO</td>
-      <td>ADULTOS</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>CAQUETA</td>
-      <td>PUERTO RICO</td>
-      <td>ARMA BLANCA</td>
-      <td>2010-01-01</td>
-      <td>MASCULINO</td>
-      <td>ADULTOS</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>CASANARE</td>
-      <td>MANÍ</td>
-      <td>ARMA BLANCA</td>
-      <td>2010-01-01</td>
-      <td>FEMENINO</td>
-      <td>ADULTOS</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>SANTAFE DE BOGOTA D.C</td>
-      <td>BOGOTÁ D.C. (CT)</td>
-      <td>ARMA BLANCA</td>
-      <td>2010-01-01</td>
-      <td>FEMENINO</td>
-      <td>ADULTOS</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
+</section>
+<section id="clustering-k-means">
+<h2>Clustering - K-Means<a class="headerlink" href="#clustering-k-means" title="Link to this heading">#</a></h2>
+<p>El objetivo principal del algoritmo K-Means es agrupar datos similares en clusters o grupos. Los clusters son conjuntos de puntos de datos que son similares entre sí en términos de características. Es importante destacar que K-Means no asigna etiquetas a los puntos de datos. Simplemente agrupa los datos en clusters basados en similitud. En este caso, se realiza una asignación dependiendo el número de cluster.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_enc</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -533,8 +435,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span><span class="p">,</span> <span class="n">StandardScaler</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span><span class="p">,</span> <span class="n">StandardScaler</span>
 
 <span class="n">label_encoders</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;armas_medios&quot;</span><span class="p">:</span> <span class="n">LabelEncoder</span><span class="p">(),</span>
@@ -560,6 +461,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">silhouette_score</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">features_for_clustering</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;armas_medios&#39;</span><span class="p">,</span> <span class="s1">&#39;genero&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_etario&#39;</span><span class="p">,</span> <span class="s1">&#39;departamento&#39;</span><span class="p">,</span> <span class="s1">&#39;municipio&#39;</span><span class="p">,</span> <span class="s1">&#39;cantidad_scaled&#39;</span><span class="p">]</span>
 <span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
@@ -570,37 +472,66 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_enc</span><span class="o">.</span><span class="n">head</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">cluster</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_enc</span><span class="o">.</span><span class="n">head</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="s1">&#39;cluster&#39;</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_enc</span><span class="o">.</span><span class="n">head</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">cluster</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(   departamento  municipio  armas_medios fecha_hecho  genero  grupo_etario  \
+ 0             1         29             0  2019-01-01       0             1   
+ 1             1        295             0  2019-01-01       0             1   
+ 2             1        510             0  2019-01-01       1             1   
+ 3             1        549             0  2019-01-01       0             1   
+ 4             4         83             0  2019-01-01       0             1   
+ 
+    cantidad  cantidad_scaled  cluster  
+ 0         1        -0.297721        1  
+ 1         1        -0.297721        1  
+ 2         2         0.347562        2  
+ 3         1        -0.297721        2  
+ 4         3         0.992845        1  ,
+ (array([&#39;cluster&#39;], dtype=&#39;&lt;U7&#39;), array([1], dtype=int64)))
 </pre></div>
 </div>
+</div>
+</div>
+<section id="aplicando-pca-para-reducir-la-dimensionalidad-a-tres-componentes-principales">
+<h3>Aplicando PCA para reducir la dimensionalidad a tres componentes principales<a class="headerlink" href="#aplicando-pca-para-reducir-la-dimensionalidad-a-tres-componentes-principales" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">components</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df_enc</span><span class="p">[</span><span class="n">features_for_clustering</span><span class="p">])</span>
+
+<span class="n">df_pca</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">components</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;PC1&#39;</span><span class="p">,</span> <span class="s1">&#39;PC2&#39;</span><span class="p">,</span> <span class="s1">&#39;PC3&#39;</span><span class="p">])</span>
+
+<span class="n">df_pca</span><span class="p">[</span><span class="s1">&#39;Cluster&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_enc</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.io</span> <span class="k">as</span> <span class="nn">pio</span>
+<span class="n">pio</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;png&quot;</span>
+
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+
+<span class="n">pca</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter_3d</span><span class="p">(</span><span class="n">df_pca</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;PC1&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;PC2&#39;</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="s1">&#39;PC3&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Cluster&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Visualización de Clusters con PCA 3D&quot;</span><span class="p">)</span>
+<span class="n">pca</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/86ce9c371d9a598917407ce1f734ef16631205fc569a2abc8dd3126e0d9afa5f.png" src="_images/86ce9c371d9a598917407ce1f734ef16631205fc569a2abc8dd3126e0d9afa5f.png" />
 </div>
 </div>
 </section>
 <section id="calculo-del-silhouette-score">
-<h2>Cálculo del Silhouette Score<a class="headerlink" href="#calculo-del-silhouette-score" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">silhouette_avg</span> <span class="o">=</span> <span class="n">silhouette_score</span><span class="p">(</span><span class="n">df_enc</span><span class="p">[</span><span class="n">features_for_clustering</span><span class="p">],</span> <span class="n">df_enc</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Silhouette Score:&#39;</span><span class="p">,</span> <span class="n">silhouette_avg</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Silhouette Score: 0.6427351608812863
-</pre></div>
-</div>
-</div>
-</div>
+<h3>Cálculo del Silhouette Score<a class="headerlink" href="#calculo-del-silhouette-score" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">yellowbrick.cluster</span> <span class="kn">import</span> <span class="n">silhouette_visualizer</span>
@@ -609,419 +540,10 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/3d2630ab9415e36ca756dbd302b9a8e4389aee207771a2ad5487e2cfa033e22c.png" src="_images/3d2630ab9415e36ca756dbd302b9a8e4389aee207771a2ad5487e2cfa033e22c.png" />
-<div class="output text_html"><style>#sk-container-id-1 {
-  /* Definition of color scheme common for light and dark mode */
-  --sklearn-color-text: black;
-  --sklearn-color-line: gray;
-  /* Definition of color scheme for unfitted estimators */
-  --sklearn-color-unfitted-level-0: #fff5e6;
-  --sklearn-color-unfitted-level-1: #f6e4d2;
-  --sklearn-color-unfitted-level-2: #ffe0b3;
-  --sklearn-color-unfitted-level-3: chocolate;
-  /* Definition of color scheme for fitted estimators */
-  --sklearn-color-fitted-level-0: #f0f8ff;
-  --sklearn-color-fitted-level-1: #d4ebff;
-  --sklearn-color-fitted-level-2: #b3dbfd;
-  --sklearn-color-fitted-level-3: cornflowerblue;
-
-  /* Specific color for light theme */
-  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
-  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
-  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
-  --sklearn-color-icon: #696969;
-
-  @media (prefers-color-scheme: dark) {
-    /* Redefinition of color scheme for dark theme */
-    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
-    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
-    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
-    --sklearn-color-icon: #878787;
-  }
-}
-
-#sk-container-id-1 {
-  color: var(--sklearn-color-text);
-}
-
-#sk-container-id-1 pre {
-  padding: 0;
-}
-
-#sk-container-id-1 input.sk-hidden--visually {
-  border: 0;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-#sk-container-id-1 div.sk-dashed-wrapped {
-  border: 1px dashed var(--sklearn-color-line);
-  margin: 0 0.4em 0.5em 0.4em;
-  box-sizing: border-box;
-  padding-bottom: 0.4em;
-  background-color: var(--sklearn-color-background);
-}
-
-#sk-container-id-1 div.sk-container {
-  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
-     but bootstrap.min.css set `[hidden] { display: none !important; }`
-     so we also need the `!important` here to be able to override the
-     default hidden behavior on the sphinx rendered scikit-learn.org.
-     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
-  display: inline-block !important;
-  position: relative;
-}
-
-#sk-container-id-1 div.sk-text-repr-fallback {
-  display: none;
-}
-
-div.sk-parallel-item,
-div.sk-serial,
-div.sk-item {
-  /* draw centered vertical line to link estimators */
-  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
-  background-size: 2px 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-/* Parallel-specific style estimator block */
-
-#sk-container-id-1 div.sk-parallel-item::after {
-  content: "";
-  width: 100%;
-  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
-  flex-grow: 1;
-}
-
-#sk-container-id-1 div.sk-parallel {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  background-color: var(--sklearn-color-background);
-  position: relative;
-}
-
-#sk-container-id-1 div.sk-parallel-item {
-  display: flex;
-  flex-direction: column;
-}
-
-#sk-container-id-1 div.sk-parallel-item:first-child::after {
-  align-self: flex-end;
-  width: 50%;
-}
-
-#sk-container-id-1 div.sk-parallel-item:last-child::after {
-  align-self: flex-start;
-  width: 50%;
-}
-
-#sk-container-id-1 div.sk-parallel-item:only-child::after {
-  width: 0;
-}
-
-/* Serial-specific style estimator block */
-
-#sk-container-id-1 div.sk-serial {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--sklearn-color-background);
-  padding-right: 1em;
-  padding-left: 1em;
-}
-
-
-/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
-clickable and can be expanded/collapsed.
-- Pipeline and ColumnTransformer use this feature and define the default style
-- Estimators will overwrite some part of the style using the `sk-estimator` class
-*/
-
-/* Pipeline and ColumnTransformer style (default) */
-
-#sk-container-id-1 div.sk-toggleable {
-  /* Default theme specific background. It is overwritten whether we have a
-  specific estimator or a Pipeline/ColumnTransformer */
-  background-color: var(--sklearn-color-background);
-}
-
-/* Toggleable label */
-#sk-container-id-1 label.sk-toggleable__label {
-  cursor: pointer;
-  display: block;
-  width: 100%;
-  margin-bottom: 0;
-  padding: 0.5em;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-#sk-container-id-1 label.sk-toggleable__label-arrow:before {
-  /* Arrow on the left of the label */
-  content: "▸";
-  float: left;
-  margin-right: 0.25em;
-  color: var(--sklearn-color-icon);
-}
-
-#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {
-  color: var(--sklearn-color-text);
-}
-
-/* Toggleable content - dropdown */
-
-#sk-container-id-1 div.sk-toggleable__content {
-  max-height: 0;
-  max-width: 0;
-  overflow: hidden;
-  text-align: left;
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-1 div.sk-toggleable__content.fitted {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-#sk-container-id-1 div.sk-toggleable__content pre {
-  margin: 0.2em;
-  border-radius: 0.25em;
-  color: var(--sklearn-color-text);
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-1 div.sk-toggleable__content.fitted pre {
-  /* unfitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {
-  /* Expand drop-down */
-  max-height: 200px;
-  max-width: 100%;
-  overflow: auto;
-}
-
-#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
-  content: "▾";
-}
-
-/* Pipeline/ColumnTransformer-specific style */
-
-#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Estimator-specific style */
-
-/* Colorize estimator box */
-#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-#sk-container-id-1 div.sk-label label.sk-toggleable__label,
-#sk-container-id-1 div.sk-label label {
-  /* The background is the default theme color */
-  color: var(--sklearn-color-text-on-default-background);
-}
-
-/* On hover, darken the color of the background */
-#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-/* Label box, darken color on hover, fitted */
-#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Estimator label */
-
-#sk-container-id-1 div.sk-label label {
-  font-family: monospace;
-  font-weight: bold;
-  display: inline-block;
-  line-height: 1.2em;
-}
-
-#sk-container-id-1 div.sk-label-container {
-  text-align: center;
-}
-
-/* Estimator-specific */
-#sk-container-id-1 div.sk-estimator {
-  font-family: monospace;
-  border: 1px dotted var(--sklearn-color-border-box);
-  border-radius: 0.25em;
-  box-sizing: border-box;
-  margin-bottom: 0.5em;
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-1 div.sk-estimator.fitted {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-/* on hover */
-#sk-container-id-1 div.sk-estimator:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-1 div.sk-estimator.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Specification for estimator info (e.g. "i" and "?") */
-
-/* Common style for "i" and "?" */
-
-.sk-estimator-doc-link,
-a:link.sk-estimator-doc-link,
-a:visited.sk-estimator-doc-link {
-  float: right;
-  font-size: smaller;
-  line-height: 1em;
-  font-family: monospace;
-  background-color: var(--sklearn-color-background);
-  border-radius: 1em;
-  height: 1em;
-  width: 1em;
-  text-decoration: none !important;
-  margin-left: 1ex;
-  /* unfitted */
-  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
-  color: var(--sklearn-color-unfitted-level-1);
-}
-
-.sk-estimator-doc-link.fitted,
-a:link.sk-estimator-doc-link.fitted,
-a:visited.sk-estimator-doc-link.fitted {
-  /* fitted */
-  border: var(--sklearn-color-fitted-level-1) 1pt solid;
-  color: var(--sklearn-color-fitted-level-1);
-}
-
-/* On hover */
-div.sk-estimator:hover .sk-estimator-doc-link:hover,
-.sk-estimator-doc-link:hover,
-div.sk-label-container:hover .sk-estimator-doc-link:hover,
-.sk-estimator-doc-link:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
-.sk-estimator-doc-link.fitted:hover,
-div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
-.sk-estimator-doc-link.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-/* Span, style for the box shown on hovering the info icon */
-.sk-estimator-doc-link span {
-  display: none;
-  z-index: 9999;
-  position: relative;
-  font-weight: normal;
-  right: .2ex;
-  padding: .5ex;
-  margin: .5ex;
-  width: min-content;
-  min-width: 20ex;
-  max-width: 50ex;
-  color: var(--sklearn-color-text);
-  box-shadow: 2pt 2pt 4pt #999;
-  /* unfitted */
-  background: var(--sklearn-color-unfitted-level-0);
-  border: .5pt solid var(--sklearn-color-unfitted-level-3);
-}
-
-.sk-estimator-doc-link.fitted span {
-  /* fitted */
-  background: var(--sklearn-color-fitted-level-0);
-  border: var(--sklearn-color-fitted-level-3);
-}
-
-.sk-estimator-doc-link:hover span {
-  display: block;
-}
-
-/* "?"-specific style due to the `<a>` HTML tag */
-
-#sk-container-id-1 a.estimator_doc_link {
-  float: right;
-  font-size: 1rem;
-  line-height: 1em;
-  font-family: monospace;
-  background-color: var(--sklearn-color-background);
-  border-radius: 1rem;
-  height: 1rem;
-  width: 1rem;
-  text-decoration: none;
-  /* unfitted */
-  color: var(--sklearn-color-unfitted-level-1);
-  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
-}
-
-#sk-container-id-1 a.estimator_doc_link.fitted {
-  /* fitted */
-  border: var(--sklearn-color-fitted-level-1) 1pt solid;
-  color: var(--sklearn-color-fitted-level-1);
-}
-
-/* On hover */
-#sk-container-id-1 a.estimator_doc_link:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-#sk-container-id-1 a.estimator_doc_link.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-3);
-}
-</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>SilhouetteVisualizer(ax=&lt;Axes: title={&#x27;center&#x27;: &#x27;Silhouette Plot of KMeans Clustering for 572079 Samples in 3 Centers&#x27;}, xlabel=&#x27;silhouette coefficient values&#x27;, ylabel=&#x27;cluster label&#x27;&gt;,
-                     colors=&#x27;yellowbrick&#x27;, estimator=KMeans(n_clusters=3))</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" ><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;SilhouetteVisualizer<span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>SilhouetteVisualizer(ax=&lt;Axes: title={&#x27;center&#x27;: &#x27;Silhouette Plot of KMeans Clustering for 572079 Samples in 3 Centers&#x27;}, xlabel=&#x27;silhouette coefficient values&#x27;, ylabel=&#x27;cluster label&#x27;&gt;,
-                     colors=&#x27;yellowbrick&#x27;, estimator=KMeans(n_clusters=3))</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" ><label for="sk-estimator-id-2" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">estimator: KMeans</label><div class="sk-toggleable__content fitted"><pre>KMeans(n_clusters=3)</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-3" type="checkbox" ><label for="sk-estimator-id-3" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;KMeans<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.4/modules/generated/sklearn.cluster.KMeans.html">?<span>Documentation for KMeans</span></a></label><div class="sk-toggleable__content fitted"><pre>KMeans(n_clusters=3)</pre></div> </div></div></div></div></div></div></div></div></div></div></div>
 </div>
 </section>
 <section id="analisis-de-los-centros-de-clusters">
-<h2>Análisis de los Centros de Clusters<a class="headerlink" href="#analisis-de-los-centros-de-clusters" title="Link to this heading">#</a></h2>
+<h3>Análisis de los Centros de Clusters<a class="headerlink" href="#analisis-de-los-centros-de-clusters" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_centers</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span>
@@ -1032,27 +554,74 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Centros de los clusters:
-[[ 1.25515259e+00  2.30537028e-01  9.94048513e-01  1.52091814e+01
-   5.14090441e+02 -4.83755342e-02]
- [ 1.57259968e+00  2.65417684e-01  1.00549509e+00  1.89005373e+01
-   1.48608101e+02  1.19441335e-01]
- [ 1.37336889e+00  2.03555556e-01  9.90407111e-01  1.45484942e+01
-   8.72437732e+02 -1.43888022e-01]]
+[[ 1.49940595e+00  2.23030996e-01  1.00287248e+00  1.40571489e+01
+   8.73753012e+02 -1.03533792e-01]
+ [ 1.47027626e+00  2.69672351e-01  1.02522041e+00  1.93140914e+01
+   1.38566071e+02  7.71626343e-02]
+ [ 1.34508587e+00  2.49440655e-01  1.01103557e+00  1.43315211e+01
+   5.04379533e+02 -2.19875056e-02]]
 </pre></div>
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p>Armas_medios: Valores más altos pueden indicar una mayor frecuencia o diversidad de armas utilizadas, lo cual podría ser un indicativo de mayor riesgo.</p></li>
-<li><p>Grupo_etario: Valores más altos en esta variable podrían indicar la participación de grupos etarios considerados en mayor riesgo o vulnerabilidad.</p></li>
-<li><p>Cantidad_scaled: Un valor más alto en esta variable indica una mayor gravedad o frecuencia de los incidentes.</p></li>
-</ul>
-<p>Asignación de Riesgo Basado en las Variables:</p>
-<ul class="simple">
-<li><p>Cluster 0: Tiene valores moderados en armas_medios y grupo_etario, y un valor ligeramente negativo en cantidad_scaled. Podría ser considerado de riesgo moderado.</p></li>
-<li><p>Cluster 1: Muestra los valores más altos en armas_medios y grupo_etario, y también el valor más alto en cantidad_scaled. Este debería ser clasificado claramente como de riesgo alto.</p></li>
-<li><p>Cluster 2: Presenta el valor más bajo en cantidad_scaled y valores moderados a bajos en armas_medios y grupo_etario. Este puede ser considerado de riesgo bajo.</p></li>
-</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Centroides de los clusters como arreglo NumPy</span>
+<span class="n">centroids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mf">1.49940595</span><span class="p">,</span> <span class="mf">0.223030996</span><span class="p">,</span> <span class="mf">1.00287248</span><span class="p">,</span> <span class="mf">14.0571489</span><span class="p">,</span> <span class="mf">873.753012</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.103533792</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">1.47027626</span><span class="p">,</span> <span class="mf">0.269672351</span><span class="p">,</span> <span class="mf">1.02522041</span><span class="p">,</span> <span class="mf">19.3140914</span><span class="p">,</span> <span class="mf">138.566071</span><span class="p">,</span> <span class="mf">0.0771626343</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">1.34508587</span><span class="p">,</span> <span class="mf">0.249440655</span><span class="p">,</span> <span class="mf">1.01103557</span><span class="p">,</span> <span class="mf">14.3315211</span><span class="p">,</span> <span class="mf">504.379533</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0219875056</span><span class="p">]</span>
+<span class="p">])</span>
+
+<span class="c1"># Descripción de los riesgos basada en tu análisis inicial</span>
+<span class="n">risks</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Moderado&#39;</span><span class="p">,</span> <span class="s1">&#39;Alto&#39;</span><span class="p">,</span> <span class="s1">&#39;Bajo&#39;</span><span class="p">]</span>
+
+<span class="c1"># Asignar niveles de riesgo a cada cluster usando las descripciones correctas</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">centroid</span><span class="p">,</span> <span class="n">risk</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">centroids</span><span class="p">,</span> <span class="n">risks</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cluster </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Armas_medios: </span><span class="si">{</span><span class="n">centroid</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Genero: </span><span class="si">{</span><span class="n">centroid</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Grupo_etario: </span><span class="si">{</span><span class="n">centroid</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Departamento: </span><span class="si">{</span><span class="n">centroid</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Municipio: </span><span class="si">{</span><span class="n">centroid</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Cantidad_scaled: </span><span class="si">{</span><span class="n">centroid</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Nivel de Riesgo: </span><span class="si">{</span><span class="n">risk</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cluster 0:
+  Armas_medios: 1.49940595
+  Genero: 0.223030996
+  Grupo_etario: 1.00287248
+  Departamento: 14.0571489
+  Municipio: 873.753012
+  Cantidad_scaled: -0.103533792
+  Nivel de Riesgo: Moderado
+
+Cluster 1:
+  Armas_medios: 1.47027626
+  Genero: 0.269672351
+  Grupo_etario: 1.02522041
+  Departamento: 19.3140914
+  Municipio: 138.566071
+  Cantidad_scaled: 0.0771626343
+  Nivel de Riesgo: Alto
+
+Cluster 2:
+  Armas_medios: 1.34508587
+  Genero: 0.249440655
+  Grupo_etario: 1.01103557
+  Departamento: 14.3315211
+  Municipio: 504.379533
+  Cantidad_scaled: -0.0219875056
+  Nivel de Riesgo: Bajo
+</pre></div>
+</div>
+</div>
+</div>
+<p>Estos insights subrayan la importancia de una estrategia diferenciada para abordar la violencia doméstica, adaptada a las características específicas y niveles de riesgo de cada grupo poblacional. Las autoridades podrían utilizar estos datos para optimizar sus recursos y estrategias de intervención, enfocando esfuerzos donde sean más necesarios para reducir eficazmente los incidentes de violencia doméstica.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_enc</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]</span>
@@ -1092,21 +661,21 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   <tbody>
     <tr>
       <th>0</th>
-      <td>ATLANTICO</td>
-      <td>BARRANQUILLA (CT)</td>
+      <td>ANTIOQUIA</td>
+      <td>AMAGÁ</td>
       <td>ARMA BLANCA</td>
-      <td>2010-01-01</td>
-      <td>MASCULINO</td>
+      <td>2019-01-01</td>
+      <td>FEMENINO</td>
       <td>ADULTOS</td>
       <td>1</td>
       <td>1</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>BOYACA</td>
-      <td>DUITAMA</td>
+      <td>ANTIOQUIA</td>
+      <td>EL SANTUARIO</td>
       <td>ARMA BLANCA</td>
-      <td>2010-01-01</td>
+      <td>2019-01-01</td>
       <td>FEMENINO</td>
       <td>ADULTOS</td>
       <td>1</td>
@@ -1114,35 +683,35 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
     </tr>
     <tr>
       <th>2</th>
-      <td>CAQUETA</td>
-      <td>PUERTO RICO</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN (CT)</td>
       <td>ARMA BLANCA</td>
-      <td>2010-01-01</td>
+      <td>2019-01-01</td>
       <td>MASCULINO</td>
       <td>ADULTOS</td>
-      <td>1</td>
-      <td>0</td>
+      <td>2</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>CASANARE</td>
-      <td>MANÍ</td>
+      <td>ANTIOQUIA</td>
+      <td>NARIÑO</td>
       <td>ARMA BLANCA</td>
-      <td>2010-01-01</td>
+      <td>2019-01-01</td>
       <td>FEMENINO</td>
       <td>ADULTOS</td>
       <td>1</td>
-      <td>0</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>SANTAFE DE BOGOTA D.C</td>
-      <td>BOGOTÁ D.C. (CT)</td>
+      <td>ATLANTICO</td>
+      <td>BARRANQUILLA (CT)</td>
       <td>ARMA BLANCA</td>
-      <td>2010-01-01</td>
+      <td>2019-01-01</td>
       <td>FEMENINO</td>
       <td>ADULTOS</td>
-      <td>1</td>
+      <td>3</td>
       <td>1</td>
     </tr>
   </tbody>
@@ -1152,103 +721,155 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </section>
 </section>
 <section id="id1">
-<h1>Modelos de Clasificación<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>Por temas de capacidad y rendimiento computacional, se tomará el 20% de los datos del dataset. Este porcentaje se aplicará en igual proporción por año (2010-2023) para cubrir el histórico de casos reportados.</p>
+<h2>Modelos de Clasificación<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="desbalanceo">
+<h3>Desbalanceo<a class="headerlink" href="#desbalanceo" title="Link to this heading">#</a></h3>
+<p>Se valida que tan desbalanceado está el dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;fecha_hecho&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;fecha_hecho&#39;</span><span class="p">])</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;fecha_hecho&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
-<span class="n">casos_por_year</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)[</span><span class="s1">&#39;cantidad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="n">casos_por_year</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>year
-2010     22902
-2011     26863
-2012     32181
-2013     32838
-2014     47691
-2015     72921
-2016     82114
-2017     83651
-2018     79940
-2019     92550
-2020    109367
-2021     91319
-2022     94455
-2023     13594
-Name: cantidad, dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Muestra del 20% de los datos por año</span>
-<span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">casos_por_year</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
-<span class="n">casos_por_year</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>year
-2010     3050
-2011     3430
-2012     4118
-2013     4394
-2014     6003
-2015     9013
-2016     9925
-2017    10045
-2018     9520
-2019    10479
-2020    20494
-2021    11080
-2022    11237
-2023     1629
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cluster
+1    115581
+2     92519
+0     66493
 Name: count, dtype: int64
 </pre></div>
 </div>
 </div>
 </div>
+<p>Según los números que proporcionas para cada clúster:</p>
+<p>Clúster 1: 115.581
+Clúster 0: 66.493
+Clúster 2: 92.519</p>
+<p>La distribución de tus clusters sugiere que hay diferencias en el número de elementos en cada grupo: 115,581 en el Cluster 1, 92,519 en el Cluster 2 y 66,493 en el Cluster 0. Si bien no hay una regla estricta sobre qué constituye un “desbalanceo”, generalmente se considera que hay desbalance cuando la distribución de clases o grupos es lo suficientemente desigual como para potencialmente sesgar el rendimiento del modelo.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Guardamos el 80% restante de los datos</span>
-<span class="n">restante</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">df1</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
-<span class="n">casos_por_year</span> <span class="o">=</span> <span class="n">restante</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
-<span class="n">casos_por_year</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">variables</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;departamento&#39;</span><span class="p">,</span> <span class="s1">&#39;municipio&#39;</span><span class="p">,</span> <span class="s1">&#39;armas_medios&#39;</span><span class="p">,</span> <span class="s1">&#39;fecha_hecho&#39;</span><span class="p">,</span> <span class="s1">&#39;genero&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_etario&#39;</span><span class="p">]</span>
+<span class="n">sample_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">variables</span><span class="p">)</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">sample_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>year
-2015     35621
-2016     49624
-2017     50226
-2018     47598
-2019     52397
-2020    102469
-2021     55401
-2022     56183
-2023      8143
-Name: count, dtype: int64
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Andres\AppData\Local\Temp\ipykernel_35652\1793699427.py:2: FutureWarning:
+
+The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
 </pre></div>
 </div>
-</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>departamento</th>
+      <th>municipio</th>
+      <th>armas_medios</th>
+      <th>fecha_hecho</th>
+      <th>genero</th>
+      <th>grupo_etario</th>
+      <th>cantidad</th>
+      <th>cluster</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>40069</th>
+      <td>AMAZONAS</td>
+      <td>LETICIA (CT)</td>
+      <td>ARMA BLANCA</td>
+      <td>2019-10-09</td>
+      <td>FEMENINO</td>
+      <td>ADULTOS</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>59831</th>
+      <td>AMAZONAS</td>
+      <td>LETICIA (CT)</td>
+      <td>ARMA BLANCA</td>
+      <td>2020-01-21</td>
+      <td>FEMENINO</td>
+      <td>ADULTOS</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>60166</th>
+      <td>AMAZONAS</td>
+      <td>LETICIA (CT)</td>
+      <td>ARMA BLANCA</td>
+      <td>2020-01-22</td>
+      <td>FEMENINO</td>
+      <td>MENORES</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>65263</th>
+      <td>AMAZONAS</td>
+      <td>LETICIA (CT)</td>
+      <td>ARMA BLANCA</td>
+      <td>2020-02-04</td>
+      <td>FEMENINO</td>
+      <td>ADULTOS</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>83199</th>
+      <td>AMAZONAS</td>
+      <td>LETICIA (CT)</td>
+      <td>ARMA BLANCA</td>
+      <td>2020-03-24</td>
+      <td>MASCULINO</td>
+      <td>MENORES</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">restante</span> <span class="o">=</span> <span class="n">restante</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Index: 30268 entries, 40069 to 88103
+Data columns (total 8 columns):
+ #   Column        Non-Null Count  Dtype         
+---  ------        --------------  -----         
+ 0   departamento  30268 non-null  category      
+ 1   municipio     30268 non-null  category      
+ 2   armas_medios  30268 non-null  category      
+ 3   fecha_hecho   30268 non-null  datetime64[ns]
+ 4   genero        30268 non-null  category      
+ 5   grupo_etario  30268 non-null  category      
+ 6   cantidad      30268 non-null  int64         
+ 7   cluster       30268 non-null  int32         
+dtypes: category(5), datetime64[ns](1), int32(1), int64(1)
+memory usage: 1.0 MB
 </pre></div>
 </div>
 </div>
@@ -1266,19 +887,42 @@ Name: count, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Seleccionar las columnas relevantes para X y y</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[[</span><span class="s1">&#39;armas_medios&#39;</span><span class="p">,</span> <span class="s1">&#39;cantidad&#39;</span><span class="p">,</span> <span class="s1">&#39;departamento&#39;</span><span class="p">,</span> <span class="s1">&#39;municipio&#39;</span><span class="p">,</span> <span class="s1">&#39;genero&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_etario&#39;</span><span class="p">]]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sample_df</span><span class="p">[[</span><span class="s1">&#39;armas_medios&#39;</span><span class="p">,</span> <span class="s1">&#39;cantidad&#39;</span><span class="p">,</span> <span class="s1">&#39;departamento&#39;</span><span class="p">,</span> <span class="s1">&#39;municipio&#39;</span><span class="p">,</span> <span class="s1">&#39;genero&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_etario&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">sample_df</span><span class="p">[</span><span class="s1">&#39;cluster&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="creacion-de-pipelines-y-gridsearchcv">
+<h3>Creación de Pipelines y GridSearchCV<a class="headerlink" href="#creacion-de-pipelines-y-gridsearchcv" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span><span class="p">,</span> <span class="n">GridSearchCV</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span>
+<span class="kn">from</span> <span class="nn">sklearn.compose</span> <span class="kn">import</span> <span class="n">ColumnTransformer</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+<span class="kn">from</span> <span class="nn">xgboost</span> <span class="kn">import</span> <span class="n">XGBClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <span class="n">MLPClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">label_binarize</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">import</span> <span class="nn">plotly.figure_factory</span> <span class="k">as</span> <span class="nn">ff</span>
+<span class="kn">from</span> <span class="nn">imblearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span> <span class="k">as</span> <span class="n">ImbPipeline</span>
+<span class="kn">from</span> <span class="nn">imblearn.over_sampling</span> <span class="kn">import</span> <span class="n">SMOTE</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definir las columnas categóricas</span>
-<span class="n">categorical_features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;armas_medios&#39;</span><span class="p">,</span> <span class="s1">&#39;departamento&#39;</span><span class="p">,</span> <span class="s1">&#39;municipio&#39;</span><span class="p">,</span> <span class="s1">&#39;genero&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_etario&#39;</span><span class="p">]</span>
-<span class="c1"># Crear el transformador para variables categóricas con OneHotEncoder</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">categorical_features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;armas_medios&#39;</span><span class="p">,</span> <span class="s1">&#39;departamento&#39;</span><span class="p">,</span> <span class="s1">&#39;municipio&#39;</span><span class="p">,</span> <span class="s1">&#39;genero&#39;</span><span class="p">,</span> <span class="s1">&#39;grupo_etario&#39;</span><span class="p">]</span>
 <span class="n">categorical_transformer</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
-<span class="c1"># Crear el ColumnTransformer que incorpora el OneHotEncoder para las categóricas</span>
 <span class="n">preprocessor</span> <span class="o">=</span> <span class="n">ColumnTransformer</span><span class="p">(</span>
     <span class="n">transformers</span><span class="o">=</span><span class="p">[</span>
         <span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="n">categorical_transformer</span><span class="p">,</span> <span class="n">categorical_features</span><span class="p">)</span>
@@ -1295,32 +939,11 @@ Name: count, dtype: int64
 </div>
 </div>
 </div>
-<section id="creacion-de-pipelines-y-gridsearchcv">
-<h2>Creación de Pipelines y GridSearchCV<a class="headerlink" href="#creacion-de-pipelines-y-gridsearchcv" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span><span class="p">,</span> <span class="n">GridSearchCV</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span><span class="p">,</span> <span class="n">OneHotEncoder</span>
-<span class="kn">from</span> <span class="nn">sklearn.compose</span> <span class="kn">import</span> <span class="n">ColumnTransformer</span>
-<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
-<span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <span class="n">MLPClassifier</span>
-<span class="kn">from</span> <span class="nn">xgboost</span> <span class="kn">import</span> <span class="n">XGBClassifier</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">plotly.figure_factory</span> <span class="k">as</span> <span class="nn">ff</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">,</span> <span class="n">confusion_matrix</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definir los modelos con sus configuraciones básicas</span>
-<span class="n">models</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">models</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;Random_Forest&#39;</span><span class="p">:</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">),</span>
-    <span class="s1">&#39;SVM&#39;</span><span class="p">:</span> <span class="n">SVC</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">),</span>
+    <span class="s1">&#39;SVM&#39;</span><span class="p">:</span> <span class="n">SVC</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">probability</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
     <span class="s1">&#39;XGBoost&#39;</span><span class="p">:</span> <span class="n">XGBClassifier</span><span class="p">(</span><span class="n">use_label_encoder</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">eval_metric</span><span class="o">=</span><span class="s1">&#39;mlogloss&#39;</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">),</span>
     <span class="s1">&#39;MLP&#39;</span><span class="p">:</span> <span class="n">MLPClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 <span class="p">}</span>
@@ -1330,31 +953,29 @@ Name: count, dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Configurar los parámetros para el GridSearch de cada modelo</span>
-<span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;Random_Forest&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;classifier__n_estimators&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span> <span class="s1">&#39;classifier__max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">]},</span>
     <span class="s1">&#39;SVM&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;classifier__C&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="s1">&#39;classifier__kernel&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="s1">&#39;rbf&#39;</span><span class="p">]},</span>
     <span class="s1">&#39;XGBoost&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;classifier__n_estimators&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span> <span class="s1">&#39;classifier__learning_rate&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">]},</span>
     <span class="s1">&#39;MLP&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;classifier__hidden_layer_sizes&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">50</span><span class="p">,),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,)],</span> <span class="s1">&#39;classifier__alpha&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0001</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">]}</span>
 <span class="p">}</span>
-
-<span class="c1"># Crear un diccionario para almacenar los resultados de GridSearchCV</span>
-<span class="n">grid_search_models</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="c1"># Configurar el pipeline y GridSearchCV para cada modelo</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid_search_models</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">for</span> <span class="n">model_name</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">models</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;preprocessor&#39;</span><span class="p">,</span> <span class="n">preprocessor</span><span class="p">),</span>
-                               <span class="p">(</span><span class="s1">&#39;classifier&#39;</span><span class="p">,</span> <span class="n">model</span><span class="p">)])</span>
-    
-    <span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">[</span><span class="n">model_name</span><span class="p">],</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">pipeline</span> <span class="o">=</span> <span class="n">ImbPipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;preprocessor&#39;</span><span class="p">,</span> <span class="n">preprocessor</span><span class="p">),</span>
+                                  <span class="p">(</span><span class="s1">&#39;smote&#39;</span><span class="p">,</span> <span class="n">SMOTE</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)),</span>
+                                  <span class="p">(</span><span class="s1">&#39;classifier&#39;</span><span class="p">,</span> <span class="n">model</span><span class="p">)])</span>
+    <span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">[</span><span class="n">model_name</span><span class="p">],</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;f1_weighted&#39;</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">grid_search_models</span><span class="p">[</span><span class="n">model_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">grid_search</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="best-gridseachcv">
-<h2>Best GridSeachCV<a class="headerlink" href="#best-gridseachcv" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejecutar GridSearchCV para cada modelo y almacenar los resultados</span>
@@ -1369,110 +990,328 @@ Name: count, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training Random_Forest...
-Best parameters for Random_Forest: {&#39;classifier__max_depth&#39;: 20, &#39;classifier__n_estimators&#39;: 100}
+Best parameters for Random_Forest: {&#39;classifier__max_depth&#39;: 20, &#39;classifier__n_estimators&#39;: 200}
 Training SVM...
 Best parameters for SVM: {&#39;classifier__C&#39;: 1, &#39;classifier__kernel&#39;: &#39;linear&#39;}
 Training XGBoost...
 Best parameters for XGBoost: {&#39;classifier__learning_rate&#39;: 0.1, &#39;classifier__n_estimators&#39;: 200}
 Training MLP...
-Best parameters for MLP: {&#39;classifier__alpha&#39;: 0.0001, &#39;classifier__hidden_layer_sizes&#39;: (100,)}
+Best parameters for MLP: {&#39;classifier__alpha&#39;: 0.001, &#39;classifier__hidden_layer_sizes&#39;: (100,)}
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="evaluacion-de-modelos">
-<h2>Evaluación de Modelos<a class="headerlink" href="#evaluacion-de-modelos" title="Link to this heading">#</a></h2>
+<h3>Evaluación de Modelos<a class="headerlink" href="#evaluacion-de-modelos" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Evaluación</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">metrics_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Model&#39;</span><span class="p">,</span> <span class="s1">&#39;Accuracy&#39;</span><span class="p">,</span> <span class="s1">&#39;Precision&#39;</span><span class="p">,</span> <span class="s1">&#39;Recall&#39;</span><span class="p">,</span> <span class="s1">&#39;F1 Score&#39;</span><span class="p">])</span>
+<span class="n">roc_data</span> <span class="o">=</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_test_binarized</span> <span class="o">=</span> <span class="n">label_binarize</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">best_models</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+    <span class="n">y_proba</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
     <span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
     <span class="n">precision</span> <span class="o">=</span> <span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
     <span class="n">recall</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
     <span class="n">f1</span> <span class="o">=</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">)</span>
 
-    <span class="c1"># Mostrar las métricas</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Precision: </span><span class="si">{</span><span class="n">precision</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Recall: </span><span class="si">{</span><span class="n">recall</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;F1 Score: </span><span class="si">{</span><span class="n">f1</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># Crear un DataFrame temporal para este modelo y luego concatenarlo</span>
+    <span class="n">temp_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+        <span class="s1">&#39;Model&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">name</span><span class="p">],</span>
+        <span class="s1">&#39;Accuracy&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">accuracy</span><span class="p">],</span>
+        <span class="s1">&#39;Precision&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">precision</span><span class="p">],</span>
+        <span class="s1">&#39;Recall&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">recall</span><span class="p">],</span>
+        <span class="s1">&#39;F1 Score&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">f1</span><span class="p">]</span>
+    <span class="p">})</span>
+    <span class="n">metrics_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">metrics_table</span><span class="p">,</span> <span class="n">temp_df</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     
-     <span class="c1"># Generar la matriz de confusión</span>
-    <span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-    <span class="n">labels</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">y_test</span><span class="p">))</span>  <span class="c1"># Asegurarse de que las etiquetas están ordenadas</span>
-
-    <span class="c1"># Crear un heatmap de la matriz de confusión usando Plotly</span>
-    <span class="n">fig</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">create_annotated_heatmap</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">cm</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">colorscale</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span> <span class="n">showscale</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Matriz de Confusión para </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Etiqueta Predicha&#39;</span><span class="p">,</span> <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Etiqueta Verdadera&#39;</span><span class="p">)</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">roc_auc</span> <span class="o">=</span> <span class="p">{},</span> <span class="p">{},</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">))):</span>
+        <span class="n">fpr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">tpr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">_</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test_binarized</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">y_proba</span><span class="p">[:,</span> <span class="n">i</span><span class="p">])</span>
+        <span class="n">roc_auc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">tpr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">roc_data</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;fpr&#39;</span><span class="p">:</span> <span class="n">fpr</span><span class="p">,</span> <span class="s1">&#39;tpr&#39;</span><span class="p">:</span> <span class="n">tpr</span><span class="p">,</span> <span class="s1">&#39;roc_auc&#39;</span><span class="p">:</span> <span class="n">roc_auc</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model: Random_Forest
-Accuracy: 0.8538
-Precision: 0.8730
-Recall: 0.8538
-F1 Score: 0.8490
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Andres\AppData\Local\Temp\ipykernel_12716\2174887250.py:18: FutureWarning:
+
+The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model: SVM
-Accuracy: 0.9997
-Precision: 0.9997
-Recall: 0.9997
-F1 Score: 0.9997
+</div>
+</div>
+</section>
+<section id="metricas">
+<h3>Métricas<a class="headerlink" href="#metricas" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">metrics_table</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model: XGBoost
-Accuracy: 0.9257
-Precision: 0.9295
-Recall: 0.9257
-F1 Score: 0.9259
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           Model  Accuracy  Precision    Recall  F1 Score
+0  Random_Forest  0.971369   0.972800  0.971369  0.971645
+1            SVM  0.993833   0.993843  0.993833  0.993837
+2        XGBoost  0.978196   0.979599  0.978196  0.978523
+3            MLP  0.994274   0.994302  0.994274  0.994282
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model: MLP
-Accuracy: 0.9997
-Precision: 0.9997
-Recall: 0.9997
-F1 Score: 0.9997
+</div>
+</div>
+</section>
+<section id="curvas-roc">
+<h3>Curvas ROC<a class="headerlink" href="#curvas-roc" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Modelo Random Forest</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">roc_data</span><span class="p">[</span><span class="s1">&#39;Random_Forest&#39;</span><span class="p">]</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">])):</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;fpr&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;tpr&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> 
+                             <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Class </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1"> (area = </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;roc_auc&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;ROC Curve for Random Forest&#39;</span><span class="p">,</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;False Positive Rate&#39;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;True Positive Rate&#39;</span><span class="p">,</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mf">0.98</span><span class="p">,</span> <span class="mf">1.01</span><span class="p">])</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Modelo SVM</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">roc_data</span><span class="p">[</span><span class="s1">&#39;SVM&#39;</span><span class="p">]</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">])):</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;fpr&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;tpr&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> 
+                             <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Class </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1"> (area = </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;roc_auc&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;ROC Curve for SVM&#39;</span><span class="p">,</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;False Positive Rate&#39;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;True Positive Rate&#39;</span><span class="p">,</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mf">0.98</span><span class="p">,</span> <span class="mf">1.01</span><span class="p">])</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Modelo XGBoost</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">roc_data</span><span class="p">[</span><span class="s1">&#39;XGBoost&#39;</span><span class="p">]</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">])):</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;fpr&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;tpr&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> 
+                             <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Class </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1"> (area = </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;roc_auc&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;ROC Curve for XGBoost&#39;</span><span class="p">,</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;False Positive Rate&#39;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;True Positive Rate&#39;</span><span class="p">,</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mf">0.98</span><span class="p">,</span> <span class="mf">1.01</span><span class="p">])</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Modelo MLP</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">roc_data</span><span class="p">[</span><span class="s1">&#39;MLP&#39;</span><span class="p">]</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">])):</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;fpr&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;tpr&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> 
+                             <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Class </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1"> (area = </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;roc_auc&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;ROC Curve for MLP&#39;</span><span class="p">,</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;False Positive Rate&#39;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;True Positive Rate&#39;</span><span class="p">,</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="mf">0.98</span><span class="p">,</span> <span class="mf">1.01</span><span class="p">])</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</section>
+<section id="matrices-de-confusion">
+<h3>Matrices de confusión<a class="headerlink" href="#matrices-de-confusion" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Random Forest</span>
+<span class="n">model_rf</span> <span class="o">=</span> <span class="n">best_models</span><span class="p">[</span><span class="s1">&#39;Random_Forest&#39;</span><span class="p">]</span>
+<span class="n">y_pred_rf</span> <span class="o">=</span> <span class="n">model_rf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">cm_rf</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_rf</span><span class="p">)</span>
+<span class="n">labels_rf</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">y_test</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig_rf</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">create_annotated_heatmap</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">cm_rf</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">labels_rf</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">labels_rf</span><span class="p">,</span> <span class="n">colorscale</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span> <span class="n">showscale</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fig_rf</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="s1">&#39;Confusion Matrix for Random Forest&#39;</span><span class="p">,</span> <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Predicted Label&#39;</span><span class="p">,</span> <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;True Label&#39;</span><span class="p">)</span>
+<span class="n">fig_rf</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SVM</span>
+<span class="n">model_svm</span> <span class="o">=</span> <span class="n">best_models</span><span class="p">[</span><span class="s1">&#39;SVM&#39;</span><span class="p">]</span>
+<span class="n">y_pred_svm</span> <span class="o">=</span> <span class="n">model_svm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">cm_svm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_svm</span><span class="p">)</span>
+<span class="n">labels_svm</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">y_test</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig_svm</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">create_annotated_heatmap</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">cm_svm</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">labels_svm</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">labels_svm</span><span class="p">,</span> <span class="n">colorscale</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span> <span class="n">showscale</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fig_svm</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="s1">&#39;Confusion Matrix for SVM&#39;</span><span class="p">,</span> <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Predicted Label&#39;</span><span class="p">,</span> <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;True Label&#39;</span><span class="p">)</span>
+<span class="n">fig_svm</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># XGBoost</span>
+<span class="n">model_xgb</span> <span class="o">=</span> <span class="n">best_models</span><span class="p">[</span><span class="s1">&#39;XGBoost&#39;</span><span class="p">]</span>
+<span class="n">y_pred_xgb</span> <span class="o">=</span> <span class="n">model_xgb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">cm_xgb</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_xgb</span><span class="p">)</span>
+<span class="n">labels_xgb</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">y_test</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig_xgb</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">create_annotated_heatmap</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">cm_xgb</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">labels_xgb</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">labels_xgb</span><span class="p">,</span> <span class="n">colorscale</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span> <span class="n">showscale</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fig_xgb</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="s1">&#39;Confusion Matrix for XGBoost&#39;</span><span class="p">,</span> <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Predicted Label&#39;</span><span class="p">,</span> <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;True Label&#39;</span><span class="p">)</span>
+<span class="n">fig_xgb</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># MLP</span>
+<span class="n">model_xgb</span> <span class="o">=</span> <span class="n">best_models</span><span class="p">[</span><span class="s1">&#39;MLP&#39;</span><span class="p">]</span>
+<span class="n">y_pred_xgb</span> <span class="o">=</span> <span class="n">model_xgb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">cm_xgb</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_xgb</span><span class="p">)</span>
+<span class="n">labels_xgb</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">y_test</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig_xgb</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">create_annotated_heatmap</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">cm_xgb</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">labels_xgb</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">labels_xgb</span><span class="p">,</span> <span class="n">colorscale</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span> <span class="n">showscale</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fig_xgb</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="s1">&#39;Confusion Matrix for MLP&#39;</span><span class="p">,</span> <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Predicted Label&#39;</span><span class="p">,</span> <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;True Label&#39;</span><span class="p">)</span>
+<span class="n">fig_xgb</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</section>
+<section id="feature-importance-para-xgboost">
+<h3>Feature Importance para XGBoost<a class="headerlink" href="#feature-importance-para-xgboost" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+
+<span class="c1"># Feature Importance for XGBoost</span>
+<span class="n">xgb_model</span> <span class="o">=</span> <span class="n">best_models</span><span class="p">[</span><span class="s1">&#39;XGBoost&#39;</span><span class="p">]</span>
+<span class="n">preprocessor_step</span> <span class="o">=</span> <span class="n">xgb_model</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;preprocessor&#39;</span><span class="p">]</span>
+<span class="n">feature_names</span> <span class="o">=</span> <span class="n">preprocessor_step</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+    
+<span class="n">feature_importances</span> <span class="o">=</span> <span class="n">xgb_model</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;classifier&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">feature_importances_</span>
+    
+<span class="n">importances_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">feature_importances</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">feature_names</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Importance&quot;</span><span class="p">])</span>
+<span class="n">importances_df</span> <span class="o">=</span> <span class="n">importances_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;Importance&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">importances_df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">importances_df</span><span class="p">[</span><span class="s1">&#39;Importance&#39;</span><span class="p">])])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Feature Importance for XGBoost&#39;</span><span class="p">,</span> <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Features&#39;</span><span class="p">,</span> <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Importance&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
 </div>
 </div>
 <p>Para concluir y comparar los modelos mencionados, consideremos cada una de las métricas de evaluación (Accuracy, Precision, Recall, F1 Score) para entender su rendimiento y situaciones en las que podrían ser preferidos.</p>
 </section>
 <section id="resultados-de-los-modelos">
-<h2>Resultados de los Modelos<a class="headerlink" href="#resultados-de-los-modelos" title="Link to this heading">#</a></h2>
-<p><strong>Random Forest:</strong>
-Accuracy: 0.8538
-Precision: 0.8730
-Recall: 0.8538
-F1 Score: 0.8490
-<strong>Conclusión:</strong> Este modelo muestra un rendimiento moderado en todas las métricas. Es robusto y maneja bien las características no lineales, pero no es el mejor en este conjunto de comparaciones.</p>
-<p><strong>SVM (Support Vector Machine):</strong>
-Accuracy: 0.9997
-Precision: 0.9997
-Recall: 0.9997
-F1 Score: 0.9997
-<strong>Conclusión:</strong> Exhibe un rendimiento casi perfecto en todas las métricas. Esto podría indicar un sobreajuste, especialmente si los datos de entrenamiento no son representativos de los datos generales.</p>
-<p><strong>XGBoost:</strong>
-Accuracy: 0.9257
-Precision: 0.9295
-Recall: 0.9257
-F1 Score: 0.9259
-<strong>Conclusión:</strong> XGBoost presenta un equilibrio entre todas las métricas con rendimiento superior al de Random Forest, destacando su eficacia en datasets complejos.</p>
-<p><strong>MLP (Multilayer Perceptron):</strong>
-Accuracy: 0.9997
-Precision: 0.9997
-Recall: 0.9997
-F1 Score: 0.9997
-<strong>Conclusión:</strong> Al igual que SVM, muestra un rendimiento casi perfecto. Sería necesario verificar si hay sobreajuste y asegurar que el modelo generaliza bien sobre datos no vistos.</p>
+<h3>Resultados de los Modelos<a class="headerlink" href="#resultados-de-los-modelos" title="Link to this heading">#</a></h3>
+<p>Desempeño General:
+<strong>SVM (Support Vector Machine) y MLP (Multi-Layer Perceptron)</strong> tienen los mejores rendimientos generales en términos de precisión, exactitud, recuperación (recall) y puntaje F1. Ambos modelos superan el 99% en todas las métricas, lo que indica un excelente ajuste y capacidad de generalización sobre los datos de prueba.</p>
+<p><strong>XGBoost</strong> también muestra un alto rendimiento, con aproximadamente un 97.8% en todas las métricas, posicionándose como un modelo muy efectivo, aunque ligeramente por debajo del SVM y MLP.</p>
+<p><strong>Random Forest</strong> tiene el rendimiento más bajo de los cuatro, pero aún así es bastante alto (alrededor del 97.1% en todas las métricas), lo que sugiere que también es un modelo competente para este conjunto de datos, aunque no tan efectivo como los otros modelos.</p>
 </section>
 <section id="guardar-modelos">
-<h2>Guardar Modelos<a class="headerlink" href="#guardar-modelos" title="Link to this heading">#</a></h2>
+<h3>Guardar Modelos<a class="headerlink" href="#guardar-modelos" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">joblib</span> <span class="kn">import</span> <span class="n">dump</span>
@@ -1496,7 +1335,7 @@ Modelo MLP guardado como MLP_model.joblib
 </div>
 </section>
 <section id="asignar-etiquetas">
-<h2>Asignar Etiquetas<a class="headerlink" href="#asignar-etiquetas" title="Link to this heading">#</a></h2>
+<h3>Asignar Etiquetas<a class="headerlink" href="#asignar-etiquetas" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">risk_labels</span> <span class="o">=</span> <span class="p">{</span>
@@ -1556,244 +1395,54 @@ Modelo MLP guardado como MLP_model.joblib
   </thead>
   <tbody>
     <tr>
-      <th>39521</th>
+      <th>133318</th>
       <td>SIN EMPLEO DE ARMAS</td>
-      <td>2</td>
-      <td>CUNDINAMARCA</td>
-      <td>MOSQUERA</td>
-      <td>FEMENINO</td>
-      <td>ADULTOS</td>
-      <td>Riesgo Moderado</td>
-    </tr>
-    <tr>
-      <th>82451</th>
-      <td>ARMA BLANCA</td>
-      <td>1</td>
-      <td>ANTIOQUIA</td>
-      <td>BELLO</td>
-      <td>FEMENINO</td>
-      <td>ADULTOS</td>
-      <td>Riesgo Alto</td>
-    </tr>
-    <tr>
-      <th>85684</th>
-      <td>ARMA BLANCA</td>
       <td>1</td>
       <td>CUNDINAMARCA</td>
       <td>SOACHA</td>
       <td>FEMENINO</td>
       <td>ADULTOS</td>
+      <td>Riesgo Moderado</td>
+    </tr>
+    <tr>
+      <th>140207</th>
+      <td>SIN EMPLEO DE ARMAS</td>
+      <td>1</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN (CT)</td>
+      <td>FEMENINO</td>
+      <td>ADULTOS</td>
       <td>Riesgo Bajo</td>
     </tr>
     <tr>
-      <th>19287</th>
+      <th>77380</th>
       <td>ARMA BLANCA</td>
       <td>1</td>
       <td>NORTE DE SANTANDER</td>
       <td>CÚCUTA (CT)</td>
-      <td>FEMENINO</td>
-      <td>ADOLESCENTES</td>
+      <td>MASCULINO</td>
+      <td>ADULTOS</td>
       <td>Riesgo Alto</td>
     </tr>
     <tr>
-      <th>59663</th>
+      <th>68546</th>
       <td>ARMA BLANCA</td>
       <td>1</td>
-      <td>VALLE DEL CAUCA</td>
-      <td>JAMUNDÍ</td>
-      <td>FEMENINO</td>
-      <td>ADOLESCENTES</td>
-      <td>Riesgo Moderado</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-</section>
-<section id="analisis-y-revision">
-<h2>Análisis y Revisión<a class="headerlink" href="#analisis-y-revision" title="Link to this heading">#</a></h2>
-<p>Cargar los modelos:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">joblib</span> <span class="kn">import</span> <span class="n">load</span>
-
-<span class="n">loaded_models</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">model_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Random_Forest&quot;</span><span class="p">,</span> <span class="s2">&quot;SVM&quot;</span><span class="p">,</span> <span class="s2">&quot;XGBoost&quot;</span><span class="p">,</span> <span class="s2">&quot;MLP&quot;</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">model_names</span><span class="p">:</span>
-    <span class="n">file_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">_model.joblib&quot;</span>
-    <span class="n">loaded_models</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Modelo </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> cargado desde </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Modelo Random_Forest cargado desde Random_Forest_model.joblib
-Modelo SVM cargado desde SVM_model.joblib
-Modelo XGBoost cargado desde XGBoost_model.joblib
-Modelo MLP cargado desde MLP_model.joblib
-</pre></div>
-</div>
-</div>
-</div>
-<section id="uso-de-los-modelos-cargados">
-<h3>Uso de los modelos cargados<a class="headerlink" href="#uso-de-los-modelos-cargados" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">restante</span><span class="o">=</span><span class="n">restante</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;cluster&#39;</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Muestra del 20% de los datos por año</span>
-<span class="n">restante1</span> <span class="o">=</span> <span class="n">restante</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">loaded_models</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">restante1</span><span class="p">)</span>
-    <span class="n">y_pred_labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">risk_labels</span><span class="p">[</span><span class="n">pred</span><span class="p">]</span> <span class="k">for</span> <span class="n">pred</span> <span class="ow">in</span> <span class="n">y_pred</span><span class="p">]</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_pred_labels</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">restante1</span><span class="p">):</span>
-        <span class="n">restante1</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;Predicción_</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_pred_labels</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Predicciones del modelo </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> agregadas al DataFrame.&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: La longitud de las predicciones del modelo </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> no coincide con el número de filas en el DataFrame.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Predicciones del modelo Random_Forest agregadas al DataFrame.
-Predicciones del modelo SVM agregadas al DataFrame.
-Predicciones del modelo XGBoost agregadas al DataFrame.
-Predicciones del modelo MLP agregadas al DataFrame.
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">restante1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>departamento</th>
-      <th>municipio</th>
-      <th>armas_medios</th>
-      <th>fecha_hecho</th>
-      <th>genero</th>
-      <th>grupo_etario</th>
-      <th>cantidad</th>
-      <th>cluster</th>
-      <th>year</th>
-      <th>Predicción_Random_Forest</th>
-      <th>Predicción_SVM</th>
-      <th>Predicción_XGBoost</th>
-      <th>Predicción_MLP</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>12870</th>
-      <td>VALLE DEL CAUCA</td>
-      <td>CALI (CT)</td>
-      <td>ARMA BLANCA</td>
-      <td>2015-07-02</td>
+      <td>ANTIOQUIA</td>
+      <td>MEDELLÍN (CT)</td>
       <td>FEMENINO</td>
       <td>ADULTOS</td>
-      <td>5</td>
-      <td>1</td>
-      <td>2015</td>
-      <td>Riesgo Alto</td>
-      <td>Riesgo Alto</td>
-      <td>Riesgo Alto</td>
-      <td>Riesgo Alto</td>
-    </tr>
-    <tr>
-      <th>29804</th>
-      <td>SUCRE</td>
-      <td>SINCELEJO (CT)</td>
-      <td>ARMA BLANCA</td>
-      <td>2015-11-12</td>
-      <td>FEMENINO</td>
-      <td>ADULTOS</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2015</td>
-      <td>Riesgo Bajo</td>
-      <td>Riesgo Bajo</td>
-      <td>Riesgo Bajo</td>
       <td>Riesgo Bajo</td>
     </tr>
     <tr>
-      <th>29916</th>
-      <td>BOLIVAR</td>
-      <td>CARTAGENA (CT)</td>
-      <td>ARMA BLANCA</td>
-      <td>2015-11-13</td>
-      <td>FEMENINO</td>
-      <td>ADULTOS</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2015</td>
-      <td>Riesgo Alto</td>
-      <td>Riesgo Alto</td>
-      <td>Riesgo Alto</td>
-      <td>Riesgo Alto</td>
-    </tr>
-    <tr>
-      <th>18675</th>
-      <td>CAUCA</td>
-      <td>POPAYÁN (CT)</td>
-      <td>ARMA BLANCA</td>
-      <td>2015-08-17</td>
-      <td>FEMENINO</td>
-      <td>ADOLESCENTES</td>
-      <td>1</td>
-      <td>0</td>
-      <td>2015</td>
-      <td>Riesgo Moderado</td>
-      <td>Riesgo Moderado</td>
-      <td>Riesgo Moderado</td>
-      <td>Riesgo Moderado</td>
-    </tr>
-    <tr>
-      <th>22712</th>
-      <td>CUNDINAMARCA</td>
-      <td>FACATATIVÁ</td>
+      <th>114040</th>
       <td>SIN EMPLEO DE ARMAS</td>
-      <td>2015-09-15</td>
-      <td>FEMENINO</td>
+      <td>1</td>
+      <td>TOLIMA</td>
+      <td>IBAGUÉ (CT)</td>
+      <td>MASCULINO</td>
       <td>ADULTOS</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2015</td>
-      <td>Riesgo Alto</td>
-      <td>Riesgo Alto</td>
-      <td>Riesgo Alto</td>
-      <td>Riesgo Alto</td>
+      <td>Riesgo Bajo</td>
     </tr>
   </tbody>
 </table>
@@ -1843,11 +1492,11 @@ Predicciones del modelo MLP agregadas al DataFrame.
       </div>
     </a>
     <a class="right-next"
-       href="Modelo_Regresion.html"
+       href="Conclusion.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Modelos de Regresión</p>
+        <p class="prev-next-title">Conclusión General</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1867,28 +1516,27 @@ Predicciones del modelo MLP agregadas al DataFrame.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Modelos de Clasificación</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering-k-means">Clustering - K-Means</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento-de-datos">Preprocesamiento de Datos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-del-silhouette-score">Cálculo del Silhouette Score</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-los-centros-de-clusters">Análisis de los Centros de Clusters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering-k-means">Clustering - K-Means</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicando-pca-para-reducir-la-dimensionalidad-a-tres-componentes-principales">Aplicando PCA para reducir la dimensionalidad a tres componentes principales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-del-silhouette-score">Cálculo del Silhouette Score</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-los-centros-de-clusters">Análisis de los Centros de Clusters</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Modelos de Clasificación</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-pipelines-y-gridsearchcv">Creación de Pipelines y GridSearchCV</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-gridseachcv">Best GridSeachCV</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluacion-de-modelos">Evaluación de Modelos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resultados-de-los-modelos">Resultados de los Modelos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guardar-modelos">Guardar Modelos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#asignar-etiquetas">Asignar Etiquetas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-y-revision">Análisis y Revisión</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-los-modelos-cargados">Uso de los modelos cargados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Modelos de Clasificación</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#desbalanceo">Desbalanceo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-pipelines-y-gridsearchcv">Creación de Pipelines y GridSearchCV</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluacion-de-modelos">Evaluación de Modelos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas">Métricas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curvas-roc">Curvas ROC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices-de-confusion">Matrices de confusión</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance-para-xgboost">Feature Importance para XGBoost</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resultados-de-los-modelos">Resultados de los Modelos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guardar-modelos">Guardar Modelos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#asignar-etiquetas">Asignar Etiquetas</a></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
